@@ -1,0 +1,59 @@
+#servidor
+server:
+  host: localhost
+  port: 8080
+
+aplicacao:
+  versao: 1.1
+  nome: Desenvolvedores
+
+#Spring
+spring:
+  application:
+    name: ordering-system
+  datasource:
+    url: jdbc:mysql://sqlexpress.crkmqi2w23yz.sa-east-1.rds.amazonaws.com:3306/dbtest
+    username: admin
+    password: PezA2611
+    jpa:
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQLDialect
+          show_sql: true
+          format_sql: true
+          use_sql_comments: true
+  servlet:
+    multipart:
+      max-file-size: 80MB
+      max-request-size: 80MB
+
+#Feign
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+  httpclient:
+    disable-ssl-validation: false
+    enabled: false
+  okhttp:
+    enabled: true
+
+#LOGGING
+logging:
+  level:
+    root: INFO
+    com.sample.feign.demofeigncustomconfig: INFO
+    br.infuse: INFO
+    org.springframework.web.client: INFO
+    org.springframework.security.oauth2: INFO
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace

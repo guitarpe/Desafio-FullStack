@@ -1,0 +1,4 @@
+services/NivelServiceTest.class
+services/DesenvolvedorServiceTest.class
+controllers/NivelControllerTest.class
+controllers/DesenvolvedorControllerTest.class

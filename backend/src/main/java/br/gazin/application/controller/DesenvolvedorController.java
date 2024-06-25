@@ -24,9 +24,7 @@ public class DesenvolvedorController {
     private DesenvolvedorService service;
 
     @GetMapping(value = "/desenvolvedores",
-            produces = MediaType.APPLICATION_JSON_VALUE,
-            consumes = MediaType.APPLICATION_JSON_VALUE)
-
+            produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Desenvolvedor recuperado com sucesso"),
             @ApiResponse(code = 404, message = "Desenvolvedor não encontrado"),

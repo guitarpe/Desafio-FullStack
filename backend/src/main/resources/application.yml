@@ -12,9 +12,9 @@ spring:
   application:
     name: ordering-system
   datasource:
-    url: jdbc:mysql://sqlexpress.crkmqi2w23yz.sa-east-1.rds.amazonaws.com:3306/dbtest
-    username: admin
-    password: PezA2611
+    url: jdbc:mysql://127.0.0.1:3306/dbgazin
+    username: root
+    password: root
     jpa:
       hibernate:
         ddl-auto: update

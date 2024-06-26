@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
+
 @Builder
 @Data
 @AllArgsConstructor
@@ -15,5 +17,6 @@ public class NivelDTO {
     private Long id;
 
     @JsonProperty("nivel")
+    @NotNull(message = "O campo nivel é obrigatório")
     private String nivel;
 }

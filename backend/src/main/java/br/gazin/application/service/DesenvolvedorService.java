@@ -19,6 +19,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.ws.rs.BadRequestException;
 import java.util.List;
 import java.util.Set;
 
@@ -127,7 +128,7 @@ public class DesenvolvedorService {
                     .orElseThrow(() -> new NotFoundException(Mensagens.NO_RESULTS.value()));
 
             repository.delete(consulta);
-        } catch (Exception ex) {
+        } catch (BadRequestException ex) {
             throw ex;
         }
 

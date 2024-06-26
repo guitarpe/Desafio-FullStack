@@ -5,6 +5,7 @@ import br.gazin.application.dto.response.MetaResponse;
 import br.gazin.application.dto.response.PagesResponse;
 import br.gazin.application.dto.response.ServiceResponse;
 import br.gazin.application.enuns.Mensagens;
+import br.gazin.application.exception.BadRequestException;
 import br.gazin.application.exception.NotFoundException;
 import br.gazin.application.model.Nivel;
 import br.gazin.application.repository.INivelRepository;
@@ -50,6 +51,21 @@ public class NivelService {
                 .status(status)
                 .mensagem(mensagem)
                 .dados(nivelCad).build();
+    }
+
+    public ServiceResponse listaNiveis() throws NotFoundException {
+
+        String mensagem = Mensagens.NIVEL_SUCCESS_LIST.value();
+
+        List<Nivel> niveis = repository.findAll();
+
+        if (niveis.isEmpty())
+            throw new NotFoundException(Mensagens.NO_RESULTS.value());
+
+        return ServiceResponse.builder()
+                .status(true)
+                .mensagem(mensagem)
+                .dados(niveis).build();
     }
 
     public ServiceResponse consultar(int page, int size) throws NotFoundException {
@@ -111,7 +127,7 @@ public class NivelService {
 
             repository.delete(nivel);
 
-        } catch (Exception ex) {
+        } catch (BadRequestException ex) {
             throw ex;
         }
 

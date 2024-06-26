@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <name>desenvolvedores</name>
     <description>desenvolvedores-gazin</description>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -10,7 +10,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./inicialdb:/docker-entrypoint-inicialdb.d
+      - ./inicialdb:/docker-entrypoint-initdb.d
 
   backend:
     build:

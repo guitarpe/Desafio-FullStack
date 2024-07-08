@@ -25,7 +25,12 @@ Trata-se de um projeto Java Spring Boot com um frontend em ReactJS e banco de da
 
     - Backend: http://localhost:8080
     - Frontend: http://localhost:3000
-   
+
+### Encerrando a Aplicação
+Para parar e remover os contêineres, execute:
+
+    docker-compose down
+
 ### Endponts disponíveis:
 
 1) Cadastrar Desenvolvedores - **POST**- http://localhost:8080/api/desenvolvedores

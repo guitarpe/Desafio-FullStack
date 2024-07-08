@@ -1,10 +1,32 @@
 # Sistema de Registro de Desenvolvedores
 
-##### Este sistema foi criado para registrar desenvolvedores a partr de arquivos XML/JSON limitados a 10 desenvolvedores por arquivo.
+O aplicação consiste num cadastro de Desenvolvedores com definições de perfis para os mesmos. 
+Trata-se de um projeto Java Spring Boot com um frontend em ReactJS e banco de dados MariaDB, todos dockerizados.
 
-Juntamente com o serviço de desenvolvedores também foi criado endpoints para cadastro e consulta de niveis.
+### Requisitos
 
-### 1 - Endponts disponíveis:
+- Docker
+- Docker Compose
+
+### Como Executar
+
+1) Realize o clone o repositório:
+
+   ```bash
+   git clone https://github.com/guitarpe/Desafio-FullStack.git
+   cd Desafio-FullStack
+   
+2) Construa e inicie os contêineres Docker:
+
+    ```bash
+   docker-compose up --build
+   
+3) Acesse a aplicação:
+
+    - Backend: http://localhost:8080
+    - Frontend: http://localhost:3000
+   
+### Endponts disponíveis:
 
 1) Cadastrar Desenvolvedores - **POST**- http://localhost:8080/api/desenvolvedores
 2) Atualizar Desenvolvedor - **PUT** - http://localhost:8080/api/desenvolvedores/1
@@ -16,7 +38,7 @@ Juntamente com o serviço de desenvolvedores também foi criado endpoints para c
 7) Consultar Nível - **GET** - http://localhost:8080/api/niveis/1
 8) Deletar Nível - **DELETE** - http://localhost:8080/api/niveis/1
 
-### 2 - Especificações
+### Especificações
 
 #### 2.1 - **POST** - Cadastrar Desenvolvedores
 
@@ -99,5 +121,6 @@ http://localhost:8080/api/niveis/3
 O usuário pode acessar o sistema através da url http://localhost:3000/. Nela é possível realizar as consultas, cadastros, edições e remoções dos registros.
 
 
-### 3 - Observações
-- Os arquivos collection e SQL estão disponíveis na pasta resources dentro da estrutura do projeto
+### Observações
+- O arquivo SQL para criação das tabelas está disponível na pasta inicialdb
+- O collection para o postamna está disponível na pasra resource, dentro da estrutura do projeto

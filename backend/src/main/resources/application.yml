@@ -12,7 +12,7 @@ spring:
   application:
     name: ordering-system
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/dbgazin
+    url: jdbc:mysql://db:3306/dbgazin
     username: root
     password: root
     jpa:
